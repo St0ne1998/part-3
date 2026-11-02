@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike | Product Catalog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="images/logo.png" alt="Nike Logo"></a>
+        </div>
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <!-- Search Bar with Floating Dropdown Suggestions Box -->
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <input type="text" placeholder="Search catalog..." autocomplete="off">
+                    <button type="button">🔍</button>
+                </div>
+                <div class="search-suggestions-dropdown"></div>
+            </div>
+
+            <button class="cart-icon-btn" onclick="toggleCartDrawer()">
+                🛒 <span class="cart-badge" id="cart-badge-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div id="catalog-view">
+            <h1 class="section-title">All Gear & Apparel</h1>
+            <p class="section-desc">Size guide reference: US 7-12 / UK 6-11 / EU 40-46</p>
+
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <article class="product-item" data-name="nike tshirt">
+                    <div class="product-image-container"><img src="images/tshirt.png" alt="Nike Tshirt"></div>
+                    <h3>Nike Tshirt</h3>
+                    <p class="product-price">R 699.00</p>
+                    <div class="size-selector">
+                        <label for="p-tshirt">Size:</label>
+                        <select id="p-tshirt"><option>Small</option><option>Medium</option><option>Large</option></select>
+                    </div>
+                    <div class="card-actions">
+                        <button class="cta-button secondary" onclick="openReviewsModal('Nike Tshirt')">Reviews</button>
+                        <button class="cta-button" onclick="addToCart('Nike Tshirt', 'R 699.00', 'p-tshirt', 'images/tshirt.png')">Add Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-item" data-name="nike hoodie">
+                    <div class="product-image-container"><img src="images/hoodie.png" alt="Nike Hoodie"></div>
+                    <h3>Nike Hoodie</h3>
+                    <p class="product-price">R 1,699.00</p>
+                    <div class="size-selector">
+                        <label for="p-hoodie">Size:</label>
+                        <select id="p-hoodie"><option>Small</option><option>Medium</option><option>Large</option></select>
+                    </div>
+                    <div class="card-actions">
+                        <button class="cta-button secondary" onclick="openReviewsModal('Nike Hoodie')">Reviews</button>
+                        <button class="cta-button" onclick="addToCart('Nike Hoodie', 'R 1,699.00', 'p-hoodie', 'images/hoodie.png')">Add Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-item" data-name="nike running shoes">
+                    <div class="product-image-container"><img src="images/running.png" alt="Nike Running Shoes"></div>
+                    <h3>Nike Running Shoes</h3>
+                    <p class="product-price">R 2,199.00</p>
+                    <div class="size-selector">
+                        <label for="p-shoes">Size:</label>
+                        <select id="p-shoes"><option>US 8</option><option>US 9</option><option>US 10</option></select>
+                    </div>
+                    <div class="card-actions">
+                        <button class="cta-button secondary" onclick="openReviewsModal('Nike Running Shoes')">Reviews</button>
+                        <button class="cta-button" onclick="addToCart('Nike Running Shoes', 'R 2,199.00', 'p-shoes', 'images/running.png')">Add Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-item" data-name="nike backpack">
+                    <div class="product-image-container"><img src="images/bag.png" alt="Nike Backpack"></div>
+                    <h3>Nike Backpack</h3>
+                    <p class="product-price">R 899.00</p>
+                    <div class="size-selector">
+                        <label for="p-bag">Size:</label>
+                        <select id="p-bag"><option>One Size</option></select>
+                    </div>
+                    <div class="card-actions">
+                        <button class="cta-button secondary" onclick="openReviewsModal('Nike Backpack')">Reviews</button>
+                        <button class="cta-button" onclick="addToCart('Nike Backpack', 'R 899.00', 'p-bag', 'images/bag.png')">Add Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="product-item" data-name="nike club cap">
+                    <div class="product-image-container"><img src="images/cap.png" alt="Nike Cap"></div>
+                    <h3>Nike Club Cap</h3>
+                    <p class="product-price">R 399.00</p>
+                    <div class="size-selector">
+                        <label for="p-cap">Size:</label>
+                        <select id="p-cap"><option>Adjustable</option></select>
+                    </div>
+                    <div class="card-actions">
+                        <button class="cta-button secondary" onclick="openReviewsModal('Nike Club Cap')">Reviews</button>
+                        <button class="cta-button" onclick="addToCart('Nike Club Cap', 'R 399.00', 'p-cap', 'images/cap.png')">Add Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article class="product-item" data-name="nike dri-fit shorts">
+                    <div class="product-image-container"><img src="images/shorts.png" alt="Nike Shorts"></div>
+                    <h3>Nike Dri-FIT Shorts</h3>
+                    <p class="product-price">R 799.00</p>
+                    <div class="size-selector">
+                        <label for="p-shorts">Size:</label>
+                        <select id="p-shorts"><option>Medium</option><option>Large</option></select>
+                    </div>
+                    <div class="card-actions">
+                        <button class="cta-button secondary" onclick="openReviewsModal('Nike Dri-FIT Shorts')">Reviews</button>
+                        <button class="cta-button" onclick="addToCart('Nike Dri-FIT Shorts', 'R 799.00', 'p-shorts', 'images/shorts.png')">Add Cart</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Checkout View -->
+        <div id="checkout-view" style="display: none; padding: 20px 0;">
+            <h2 id="selected-product-title" class="section-title">Shipping & Order Checkout</h2>
+            <form onsubmit="processOrder(event)">
+                <label>Full Name:<input type="text" required placeholder="Enter full name"></label>
+                <label>Street Address:<input type="text" required placeholder="Enter street address"></label>
+                <label>City / Suburb:<input type="text" required placeholder="Enter city"></label>
+                <label>Postal Code:<input type="text" required placeholder="Enter postal code"></label>
+                <button type="submit" class="cta-button">Place Order</button>
+                <button type="button" class="cta-button secondary" onclick="resetCatalogView()">Cancel</button>
+            </form>
+        </div>
+
+        <!-- Success View -->
+        <div id="success-view" style="display: none; text-align: center; padding: 40px 0;" class="form-section">
+            <h2>🎉 Order Placed Successfully!</h2>
+            <p style="margin: 20px 0;">Your unique Order ID is: <strong id="generated-order-id" style="color: var(--accent-color); font-size: 1.4em;"></strong></p>
+            <button class="cta-button" onclick="resetCatalogView()">Back to Products</button>
+        </div>
+    </main>
+
+    <!-- Side-Drawer Cart -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <span style="cursor:pointer; font-size: 1.5rem;" onclick="toggleCartDrawer(false)">&times;</span>
+        </div>
+        <div class="cart-body" id="cart-drawer-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-drawer-total">R 0.00</span>
+            </div>
+            <button class="cta-button" style="width: 100%;" onclick="toggleCartDrawer(false); openCheckout('Cart Selection', 'Total', '')">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Reviews Modal -->
+    <div id="reviews-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeReviewsModal()">&times;</span>
+            <h3 id="modal-product-title">Product Reviews</h3>
+            <div style="margin-top: 15px;">
+                <p><strong>⭐⭐⭐⭐⭐ - Sibusiso N.</strong></p>
+                <p style="font-size: 0.9rem; color: var(--gray-text);">Highly recommended!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nike, Inc. All Rights Reserved. | Part 3 Web Development Project[cite: 2]</p>
+    </footer>
+</body>
+</html>

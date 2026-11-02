@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike | Product Enquiry</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="images/logo.png" alt="Nike Swoosh Logo"></a>
+        </div>
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html" class="active">Enquiry</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="cart-icon-btn" onclick="toggleCartDrawer()">
+                🛒 <span class="cart-badge" id="cart-badge-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h1 class="section-title">Product Enquiry Form</h1>
+            <p class="section-desc">Have a specific question regarding our gear? Fill out the form below.</p>
+            <form onsubmit="handleFormSubmit(event, 'Enquiry submitted successfully!')">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required placeholder="Enter full name">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required placeholder="Enter email address">
+
+                <label for="product-select">Select Product:</label>
+                <select id="product-select">
+                    <option value="hoodie">Nike Hoodie</option>
+                    <option value="backpack">Nike Backpack</option>
+                    <option value="shoes">Nike Running Shoes</option>
+                    <option value="tshirt">Nike Tshirt</option>
+                </select>
+
+                <label for="message">Enquiry Details:</label>
+                <textarea id="message" rows="4" required placeholder="Type your inquiry details..."></textarea>
+
+                <button type="submit" class="cta-button">Submit Enquiry</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Side-Drawer Cart -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <span style="cursor:pointer; font-size: 1.5rem;" onclick="toggleCartDrawer(false)">&times;</span>
+        </div>
+        <div class="cart-body" id="cart-drawer-items"></div>
+        <div class="cart-footer">
+            <button class="cta-button" style="width: 100%;" onclick="window.location.href='products.html'">Go to Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nike, Inc. All Rights Reserved. | Part 3 Web Development Project[cite: 2]</p>
+    </footer>
+</body>
+</html>

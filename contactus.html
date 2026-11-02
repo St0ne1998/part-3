@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike | Contact Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="images/logo.png" alt="Nike Swoosh Logo"></a>
+        </div>
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="cart-icon-btn" onclick="toggleCartDrawer()">
+                🛒 <span class="cart-badge" id="cart-badge-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h1 class="section-title">Contact Us</h1>
+            <p class="section-desc">Have questions or feedback? Reach out to our support team directly or visit our headquarters below.</p>
+            
+            <div style="margin-bottom: 25px;">
+                <p><strong>Email:</strong> support@nike.com</p>
+                <p><strong>Phone:</strong> +27 11 123 4567</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3>Our Location</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.3705035222045!2d28.047305!3d-26.107567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA2JzI3LjMiUyAyOMKwMDInNTAuMyJF!5e0!3m2!1sen!2sza!4v1620000000000!5m2!1sen!2sza" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius: 12px; margin-top: 10px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <form onsubmit="handleFormSubmit(event, 'Message sent successfully!')">
+                <label for="contact-name">Your Name:</label>
+                <input type="text" id="contact-name" required placeholder="Full name">
+
+                <label for="contact-email">Your Email:</label>
+                <input type="email" id="contact-email" required placeholder="Email address">
+
+                <label for="contact-msg">Message:</label>
+                <textarea id="contact-msg" rows="4" required placeholder="Type your message..."></textarea>
+
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Side-Drawer Cart -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <span style="cursor:pointer; font-size: 1.5rem;" onclick="toggleCartDrawer(false)">&times;</span>
+        </div>
+        <div class="cart-body" id="cart-drawer-items"></div>
+        <div class="cart-footer">
+            <button class="cta-button" style="width: 100%;" onclick="window.location.href='products.html'">Go to Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nike, Inc. All Rights Reserved. | Part 3 Web Development Project[cite: 2]</p>
+    </footer>
+</body>
+</html>

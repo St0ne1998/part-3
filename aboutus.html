@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike | About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="images/logo.png" alt="Nike Swoosh Logo"></a>
+        </div>
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <div class="search-container">
+                <input type="text" placeholder="Search products..." onkeypress="if(event.key === 'Enter') window.location.href='products.html'">
+                <button type="button">🔍</button>
+            </div>
+            <button class="cart-icon-btn" onclick="toggleCartDrawer()">
+                🛒 <span class="cart-badge" id="cart-badge-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-content">
+            <h1 class="section-title">About Nike</h1>
+            <p class="section-desc">Our mission is what drives us to do everything possible to expand human potential. We do that by creating groundbreaking sport innovations, making our products more sustainably, and by building a creative, diverse global team.</p>
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+        </section>
+    </main>
+
+    <!-- Side-Drawer Cart -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <span style="cursor:pointer; font-size: 1.5rem;" onclick="toggleCartDrawer(false)">&times;</span>
+        </div>
+        <div class="cart-body" id="cart-drawer-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-drawer-total">R 0.00</span>
+            </div>
+            <button class="cta-button" style="width: 100%;" onclick="window.location.href='products.html'">Go to Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nike, Inc. All Rights Reserved. | Part 3 Web Development Project[cite: 2]</p>
+    </footer>
+</body>
+</html>
